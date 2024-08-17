@@ -1,8 +1,9 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # 17
 VisualStudioVersion = 17.11.35201.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedApplicationAuth.AppHost", "DistributedApplicationAuth\DistributedApplicationAuth.AppHost\DistributedApplicationAuth.AppHost.csproj", "{1C00B99A-F697-438C-AC5D-EA67EB1FDE52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistributedApplicationAuth.AppHost", "DistributedApplicationAuth\DistributedApplicationAuth.AppHost\DistributedApplicationAuth.AppHost.csproj", "{1C00B99A-F697-438C-AC5D-EA67EB1FDE52}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistributedApplicationAuth.ServiceDefaults", "DistributedApplicationAuth\DistributedApplicationAuth.ServiceDefaults\DistributedApplicationAuth.ServiceDefaults.csproj", "{C4883F1A-30A3-487F-AA3E-C1673F620B5B}"
 EndProject
@@ -12,7 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistributedApplicationAuth.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DistributedApplicationAuth", "DistributedApplicationAuth", "{915DBE37-A2F5-4C99-A2B3-7C1B0629C8EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitConfiguration", "GitConfiguration\GitConfiguration.csproj", "{F6F00821-7216-41B7-B595-624326610551}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitConfiguration", "GitConfiguration\GitConfiguration.csproj", "{F6F00821-7216-41B7-B595-624326610551}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DashboardConfiguration", "DashboardConfiguration", "{C4CAF4B4-CFEB-4420-B2FA-2135EB9818B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardConfiguration.AppHost", "DashboardConfiguration\DashboardConfiguration.AppHost\DashboardConfiguration.AppHost.csproj", "{68E9F0F7-7B78-4AB4-960F-CC6242F9F11F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardConfiguration.ServiceDefaults", "DashboardConfiguration\DashboardConfiguration.ServiceDefaults\DashboardConfiguration.ServiceDefaults.csproj", "{A192CE13-76BA-40BB-A490-952AC3504DE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardConfiguration.ApiService", "DashboardConfiguration\DashboardConfiguration.ApiService\DashboardConfiguration.ApiService.csproj", "{550B8104-3BEF-4213-8914-5FE41FE9D186}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardConfiguration.Web", "DashboardConfiguration\DashboardConfiguration.Web\DashboardConfiguration.Web.csproj", "{82A23C9F-8705-481A-B0E0-DAC27F73F785}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +51,22 @@ Global
 		{F6F00821-7216-41B7-B595-624326610551}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6F00821-7216-41B7-B595-624326610551}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6F00821-7216-41B7-B595-624326610551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68E9F0F7-7B78-4AB4-960F-CC6242F9F11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E9F0F7-7B78-4AB4-960F-CC6242F9F11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E9F0F7-7B78-4AB4-960F-CC6242F9F11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E9F0F7-7B78-4AB4-960F-CC6242F9F11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A192CE13-76BA-40BB-A490-952AC3504DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A192CE13-76BA-40BB-A490-952AC3504DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A192CE13-76BA-40BB-A490-952AC3504DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A192CE13-76BA-40BB-A490-952AC3504DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550B8104-3BEF-4213-8914-5FE41FE9D186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{550B8104-3BEF-4213-8914-5FE41FE9D186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{550B8104-3BEF-4213-8914-5FE41FE9D186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{550B8104-3BEF-4213-8914-5FE41FE9D186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A23C9F-8705-481A-B0E0-DAC27F73F785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A23C9F-8705-481A-B0E0-DAC27F73F785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A23C9F-8705-481A-B0E0-DAC27F73F785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A23C9F-8705-481A-B0E0-DAC27F73F785}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +76,10 @@ Global
 		{C4883F1A-30A3-487F-AA3E-C1673F620B5B} = {915DBE37-A2F5-4C99-A2B3-7C1B0629C8EC}
 		{0531A149-AD0F-473C-9870-54EF7F0A0C3B} = {915DBE37-A2F5-4C99-A2B3-7C1B0629C8EC}
 		{C2932324-EE50-4EDE-8576-D4AE7441C292} = {915DBE37-A2F5-4C99-A2B3-7C1B0629C8EC}
+		{68E9F0F7-7B78-4AB4-960F-CC6242F9F11F} = {C4CAF4B4-CFEB-4420-B2FA-2135EB9818B7}
+		{A192CE13-76BA-40BB-A490-952AC3504DE2} = {C4CAF4B4-CFEB-4420-B2FA-2135EB9818B7}
+		{550B8104-3BEF-4213-8914-5FE41FE9D186} = {C4CAF4B4-CFEB-4420-B2FA-2135EB9818B7}
+		{82A23C9F-8705-481A-B0E0-DAC27F73F785} = {C4CAF4B4-CFEB-4420-B2FA-2135EB9818B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16559AAD-BCC1-4C25-A21C-2131857A9C36}

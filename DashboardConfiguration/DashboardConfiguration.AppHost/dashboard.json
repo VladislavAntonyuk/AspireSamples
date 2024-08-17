@@ -1,0 +1,9 @@
+{
+	"Dashboard": {
+		"TelemetryLimits": {
+			"MaxLogCount": 1000,
+			"MaxTraceCount": 1000,
+			"MaxMetricsCount": 1000
+		}
+	}
+}

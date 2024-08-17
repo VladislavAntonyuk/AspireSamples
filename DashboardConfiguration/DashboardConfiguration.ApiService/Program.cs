@@ -1,16 +1,10 @@
-﻿using System.Security.Claims;
-using Microsoft.Identity.Web;
-
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire components.
 builder.AddServiceDefaults();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
-
-builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration, Constants.AzureAdB2C);
-builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -21,13 +15,6 @@ var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
-
-app.MapGet("/me", (ClaimsPrincipal claims) => new
-{
-	Name = claims.GetDisplayName(), 
-	claims.Identity?.AuthenticationType,
-    claims.Identity?.IsAuthenticated
-}).RequireAuthorization();
 
 app.MapGet("/weatherforecast", () =>
 {
@@ -40,7 +27,7 @@ app.MapGet("/weatherforecast", () =>
         ))
         .ToArray();
     return forecast;
-}).RequireAuthorization();
+});
 
 app.MapDefaultEndpoints();
 

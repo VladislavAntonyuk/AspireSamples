@@ -1,0 +1,22 @@
+{
+	"Dashboard": {
+		"Frontend": {
+			"AuthMode": "OpenIdConnect",
+			"OpenIdConnect": {
+				"NameClaimType": "name",
+				"UsernameClaimType": "preferred_username",
+				"RequiredClaimType": "",
+				"RequiredClaimValue": ""
+			}
+		}
+	},
+	"Authentication": {
+		"Schemes": {
+			"OpenIdConnect": {
+				"Authority": "https://login.microsoftonline.com/yourtenant.onmicrosoft.com",
+				"ClientId": "your-client-id",
+				"ClientSecret": "your"
+			}
+		}
+	}
+}

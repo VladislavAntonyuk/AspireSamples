@@ -1,0 +1,8 @@
+{
+	"Dashboard": {
+		"Frontend": {
+			"AuthMode": "BrowserToken",
+			"BrowserToken": "TheToken"
+		}
+	}
+}

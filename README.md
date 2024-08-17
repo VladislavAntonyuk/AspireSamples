@@ -17,4 +17,6 @@ The development guide can be found at [SETUP.md](./SETUP.md).
 
 1. [DistributedApplicationAuth](DistributedApplicationAuth) - Azure Active Directory authentication in .NET Aspire Distributed Application.
 
+1. [DashboardConfiguration](DashboardConfiguration) - .NET Aspire Dashboard Configuration including Telemetry and Authentication.
+
 [![Stand With Ukraine](https://img.shields.io/badge/made_in-ukraine-ffd700.svg?labelColor=0057b7)](https://stand-with-ukraine.pp.ua)

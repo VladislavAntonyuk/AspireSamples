@@ -1,0 +1,10 @@
+{
+	"Dashboard": {
+		"Frontend": {
+			"AuthMode": "Unsecured"
+		},
+		"Otlp": {
+			"AuthMode": "Unsecured"
+		}
+	}
+}
