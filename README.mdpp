@@ -1,0 +1,20 @@
+# .NET Aspire Samples
+
+!INCLUDE "md/header.mdpp"
+
+!INCLUDE "md/footer.mdpp"
+
+!INCLUDE "md/thankyou.mdpp"
+
+
+License: MIT.
+
+## Setup
+
+The development guide can be found at [SETUP.md](./SETUP.md).
+
+## Projects
+
+1. [DistributedApplicationAuth](DistributedApplicationAuth) - Azure Active Directory authentication in .NET Aspire Distributed Application.
+
+!INCLUDE "md/footer.mdpp"

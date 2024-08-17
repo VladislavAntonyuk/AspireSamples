@@ -1,0 +1,18 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+  reviewers:
+    - "VladislavAntonyuk"
+  assignees:
+      - "VladislavAntonyuk"
+  open-pull-requests-limit: 10
+  groups:
+    Microsoft:
+      patterns:
+      - "Microsoft*"
+    Aspire:
+      patterns:
+      - "Aspire*"

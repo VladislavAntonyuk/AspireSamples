@@ -1,0 +1,9 @@
+version = 1
+
+exclude_patterns = ["Migrations/**"]
+
+[[analyzers]]
+name = "secrets"
+
+[[analyzers]]
+name = "csharp"
