@@ -1,0 +1,71 @@
+﻿@page "/weather-http-client"
+@attribute [StreamRendering(true)]
+@attribute [OutputCache(Duration = 5)]
+
+@inject WeatherApiHttpClient WeatherApi
+@inject NavigationManager NavigationManager
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather</h1>
+
+<p>This component demonstrates showing data loaded from a backend API service.</p>
+
+<AuthorizeView>
+	<Authorized>
+		Hello from Blazor Auth, @context.User.Identity?.Name (@context.User.Identity?.AuthenticationType).
+		@if (identityHttpClient?.IsAuthenticated == true)
+		{
+			<p>Hello from API Service (HttpClient), @identityHttpClient.Name (@identityHttpClient.AuthenticationType).</p>
+		}
+
+		@if (forecasts == null)
+		{
+			<p><em>Loading...</em></p>
+		}
+		else
+		{
+			<table class="table">
+				<thead>
+				<tr>
+					<th>Date</th>
+					<th>Temp. (C)</th>
+					<th>Temp. (F)</th>
+					<th>Summary</th>
+				</tr>
+				</thead>
+				<tbody>
+				@foreach (var forecast in forecasts)
+				{
+					<tr>
+						<td>@forecast.Date.ToShortDateString()</td>
+						<td>@forecast.TemperatureC</td>
+						<td>@forecast.TemperatureF</td>
+						<td>@forecast.Summary</td>
+					</tr>
+				}
+				</tbody>
+			</table>
+		}
+	</Authorized>
+	<NotAuthorized>
+		You are not authorized.
+		<button @onclick="SignIn">Sign In</button>
+	</NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private List<WeatherForecast>? forecasts;
+    private IdentityInfo? identityHttpClient;
+
+    protected override async Task OnInitializedAsync()
+	{
+		identityHttpClient = await WeatherApi.GetMeAsync();
+        forecasts = await WeatherApi.GetWeatherAsync();
+    }
+
+    private void SignIn()
+    {
+	    NavigationManager.NavigateTo("MicrosoftIdentity/Account/SignIn", true);
+    }
+}

@@ -1,15 +1,13 @@
-using System.Security.Claims;
-using System.Security.Principal;
-using Microsoft.Identity.Abstractions;
+﻿using Microsoft.Identity.Abstractions;
 using Microsoft.Identity.Web;
 
 namespace DistributedApplicationAuth.Web;
 
-public class WeatherApiClient(IDownstreamApi downstreamApi, MicrosoftIdentityConsentAndConditionalAccessHandler handler)
+public class WeatherApiDownstreamApiClient(IDownstreamApi downstreamApi, MicrosoftIdentityConsentAndConditionalAccessHandler handler)
 {
-    public async Task<List<WeatherForecast>> GetWeatherAsync(int maxItems = 10, CancellationToken cancellationToken = default)
-    {
-        List<WeatherForecast>? forecasts = null;
+	public async Task<List<WeatherForecast>> GetWeatherAsync(int maxItems = 10, CancellationToken cancellationToken = default)
+	{
+		List<WeatherForecast>? forecasts = null;
 
 		try
 		{
@@ -24,29 +22,44 @@ public class WeatherApiClient(IDownstreamApi downstreamApi, MicrosoftIdentityCon
 		}
 
 		return forecasts ?? [];
-    }
-    
-    public async Task<IdentityInfo?> GetMeAsync(CancellationToken cancellationToken = default)
-    {
-	    try
-	    {
-		    return await downstreamApi.GetForUserAsync<IdentityInfo>("ApiClient", options =>
-		    {
-			    options.RelativePath = "/me";
-		    }, cancellationToken: cancellationToken);
-	    }
-	    catch (Exception e)
-	    {
-		    handler.HandleException(e);
-	    }
+	}
 
-	    return null;
-    }
+	public async Task<IdentityInfo?> GetMeAsync(CancellationToken cancellationToken = default)
+	{
+		try
+		{
+			return await downstreamApi.CallApiForUserAsync<IdentityInfo>("ApiClient", options =>
+			{
+				options.HttpMethod = HttpMethod.Get.Method;
+				options.RelativePath = "/me";
+			}, cancellationToken: cancellationToken);
+		}
+		catch (Exception e)
+		{
+			handler.HandleException(e);
+		}
+
+		return null;
+	}
+}
+
+public class WeatherApiHttpClient(HttpClient httpClient)
+{
+	public async Task<List<WeatherForecast>> GetWeatherAsync(int maxItems = 10, CancellationToken cancellationToken = default)
+	{
+		List<WeatherForecast>? forecasts = await httpClient.GetFromJsonAsync<List<WeatherForecast>>("/weatherforecast", cancellationToken);
+		return forecasts ?? [];
+	}
+
+	public async Task<IdentityInfo?> GetMeAsync(CancellationToken cancellationToken = default)
+	{
+		return await httpClient.GetFromJsonAsync<IdentityInfo>("/me", cancellationToken);
+	}
 }
 
 public record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+	public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
 
 public class IdentityInfo

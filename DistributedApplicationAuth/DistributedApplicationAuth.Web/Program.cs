@@ -1,17 +1,18 @@
-using DistributedApplicationAuth.Web;
+﻿using DistributedApplicationAuth.Web;
 using DistributedApplicationAuth.Web.Components;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
+using MicrosoftIdentityUserAuthenticationMessageHandler = DistributedApplicationAuth.Web.MicrosoftIdentityUserAuthenticationMessageHandler;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire components.
 builder.AddServiceDefaults();
 
-var scopes = builder.Configuration.GetSection("ApiClient:Scopes").Get<string[]>();
-builder.Services.AddMicrosoftIdentityWebAppAuthentication(builder.Configuration, Microsoft.Identity.Web.Constants.AzureAdB2C)
+var scopes = builder.Configuration.GetSection("ApiClientDownstream:Scopes").Get<string[]>();
+builder.Services.AddMicrosoftIdentityWebAppAuthentication(builder.Configuration, Constants.AzureAdB2C)
 	.EnableTokenAcquisitionToCallDownstreamApi(scopes)
-	.AddDownstreamApi("ApiClient", builder.Configuration.GetSection("ApiClient"))
+	.AddDownstreamApi("ApiClient", builder.Configuration.GetSection("ApiClientDownstream"))
 	.AddInMemoryTokenCaches();
 
 builder.Services.AddControllersWithViews().AddMicrosoftIdentityUI();
@@ -23,7 +24,17 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddMicrosoftIdentityConsentHandler();
 
-builder.Services.AddScoped<WeatherApiClient>();
+builder.Services.AddScoped<WeatherApiDownstreamApiClient>();
+
+builder.Services.AddOptions<MicrosoftIdentityAuthenticationMessageHandlerOptions>()
+        .Bind(builder.Configuration.GetSection("ApiClient"));
+builder.Services.AddTransient<MicrosoftIdentityUserAuthenticationMessageHandler>();
+builder.Services.AddHttpClient<WeatherApiHttpClient>(o=>
+{
+	var baseUrl = builder.Configuration.GetValue<string>("ApiClient:BaseUrl");
+	o.BaseAddress = new Uri(baseUrl!);
+})
+.AddHttpMessageHandler<MicrosoftIdentityUserAuthenticationMessageHandler>();
 
 builder.Services.AddOutputCache();
 
