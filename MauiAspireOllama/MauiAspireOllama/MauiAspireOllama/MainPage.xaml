@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiAspireOllama.MainPage"
+    Title="Weather Forecasts">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="auto" />
+            <RowDefinition 
+                Height="*" />
+        </Grid.RowDefinitions>
+        <Border 
+            Padding="5">
+            <HorizontalStackLayout>
+	            <Button 
+		            x:Name="btnLoad"
+		            Text="Load Weather" 
+		            HorizontalOptions="Start" 
+		            VerticalOptions="Center" 
+		            Clicked="OnButtonClick" />
+	            <ActivityIndicator 
+		            x:Name="pbLoading"
+		            IsRunning="True"
+		            Margin="5" />
+			</HorizontalStackLayout>
+        </Border>
+        <Border
+            Grid.Row="1">
+            <CollectionView
+                x:Name="dgWeather">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            ColumnDefinitions="*,*,*,*">
+                            <Label 
+                                Text="{Binding Date}"/>
+                            <Label 
+                                Grid.Column="1"
+                                Text="{Binding TemperatureC}"/>
+                            <Label 
+                                Grid.Column="2"
+                                Text="{Binding Summary}"/>
+                            <Label 
+                                Grid.Column="3  "
+                                Text="{Binding TemperatureF}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Border>
+    </Grid>
+</ContentPage>

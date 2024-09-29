@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 17
+# Visual Studio Version 17
 VisualStudioVersion = 17.11.35201.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistributedApplicationAuth.AppHost", "DistributedApplicationAuth\DistributedApplicationAuth.AppHost\DistributedApplicationAuth.AppHost.csproj", "{1C00B99A-F697-438C-AC5D-EA67EB1FDE52}"
@@ -24,6 +24,22 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardConfiguration.ApiService", "DashboardConfiguration\DashboardConfiguration.ApiService\DashboardConfiguration.ApiService.csproj", "{550B8104-3BEF-4213-8914-5FE41FE9D186}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardConfiguration.Web", "DashboardConfiguration\DashboardConfiguration.Web\DashboardConfiguration.Web.csproj", "{82A23C9F-8705-481A-B0E0-DAC27F73F785}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MauiAspireOllama", "MauiAspireOllama", "{779D8643-5F9B-4B4E-BA7F-2C90A7C6FE2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.AppHost", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.AppHost\MauiAspireOllama.AppHost.csproj", "{1EEC7897-A25D-4973-8E49-15581A7081D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.ServiceDefaults", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.ServiceDefaults\MauiAspireOllama.ServiceDefaults.csproj", "{DE51F125-1ECB-4FD4-AADC-2624A5288394}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.ApiService", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.ApiService\MauiAspireOllama.ApiService.csproj", "{D3B3AEBF-C0A1-42F9-8210-24FC7FD74093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.Web", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.Web\MauiAspireOllama.Web.csproj", "{8CB81B1B-5F05-4FF7-A341-339D5A9DC533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.ClientStub", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.ClientStub\MauiAspireOllama.ClientStub.csproj", "{3D0B6CD5-EB3F-4E0A-BFD6-D834C1EB3A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.csproj", "{5B70DB70-B943-4F29-8470-8AC90DCEB4FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllana.Shared", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllana.Shared\MauiAspireOllana.Shared.csproj", "{4B3C9C69-3B3B-4BEC-8E89-3C6FB29894FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +83,36 @@ Global
 		{82A23C9F-8705-481A-B0E0-DAC27F73F785}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82A23C9F-8705-481A-B0E0-DAC27F73F785}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82A23C9F-8705-481A-B0E0-DAC27F73F785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EEC7897-A25D-4973-8E49-15581A7081D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EEC7897-A25D-4973-8E49-15581A7081D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EEC7897-A25D-4973-8E49-15581A7081D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EEC7897-A25D-4973-8E49-15581A7081D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE51F125-1ECB-4FD4-AADC-2624A5288394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE51F125-1ECB-4FD4-AADC-2624A5288394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE51F125-1ECB-4FD4-AADC-2624A5288394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE51F125-1ECB-4FD4-AADC-2624A5288394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B3AEBF-C0A1-42F9-8210-24FC7FD74093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B3AEBF-C0A1-42F9-8210-24FC7FD74093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B3AEBF-C0A1-42F9-8210-24FC7FD74093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B3AEBF-C0A1-42F9-8210-24FC7FD74093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CB81B1B-5F05-4FF7-A341-339D5A9DC533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CB81B1B-5F05-4FF7-A341-339D5A9DC533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CB81B1B-5F05-4FF7-A341-339D5A9DC533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CB81B1B-5F05-4FF7-A341-339D5A9DC533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D0B6CD5-EB3F-4E0A-BFD6-D834C1EB3A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D0B6CD5-EB3F-4E0A-BFD6-D834C1EB3A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D0B6CD5-EB3F-4E0A-BFD6-D834C1EB3A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D0B6CD5-EB3F-4E0A-BFD6-D834C1EB3A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B70DB70-B943-4F29-8470-8AC90DCEB4FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B70DB70-B943-4F29-8470-8AC90DCEB4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B70DB70-B943-4F29-8470-8AC90DCEB4FE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5B70DB70-B943-4F29-8470-8AC90DCEB4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B70DB70-B943-4F29-8470-8AC90DCEB4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B70DB70-B943-4F29-8470-8AC90DCEB4FE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4B3C9C69-3B3B-4BEC-8E89-3C6FB29894FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B3C9C69-3B3B-4BEC-8E89-3C6FB29894FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B3C9C69-3B3B-4BEC-8E89-3C6FB29894FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B3C9C69-3B3B-4BEC-8E89-3C6FB29894FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +126,13 @@ Global
 		{A192CE13-76BA-40BB-A490-952AC3504DE2} = {C4CAF4B4-CFEB-4420-B2FA-2135EB9818B7}
 		{550B8104-3BEF-4213-8914-5FE41FE9D186} = {C4CAF4B4-CFEB-4420-B2FA-2135EB9818B7}
 		{82A23C9F-8705-481A-B0E0-DAC27F73F785} = {C4CAF4B4-CFEB-4420-B2FA-2135EB9818B7}
+		{1EEC7897-A25D-4973-8E49-15581A7081D9} = {779D8643-5F9B-4B4E-BA7F-2C90A7C6FE2F}
+		{DE51F125-1ECB-4FD4-AADC-2624A5288394} = {779D8643-5F9B-4B4E-BA7F-2C90A7C6FE2F}
+		{D3B3AEBF-C0A1-42F9-8210-24FC7FD74093} = {779D8643-5F9B-4B4E-BA7F-2C90A7C6FE2F}
+		{8CB81B1B-5F05-4FF7-A341-339D5A9DC533} = {779D8643-5F9B-4B4E-BA7F-2C90A7C6FE2F}
+		{3D0B6CD5-EB3F-4E0A-BFD6-D834C1EB3A86} = {779D8643-5F9B-4B4E-BA7F-2C90A7C6FE2F}
+		{5B70DB70-B943-4F29-8470-8AC90DCEB4FE} = {779D8643-5F9B-4B4E-BA7F-2C90A7C6FE2F}
+		{4B3C9C69-3B3B-4BEC-8E89-3C6FB29894FD} = {779D8643-5F9B-4B4E-BA7F-2C90A7C6FE2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16559AAD-BCC1-4C25-A21C-2131857A9C36}
