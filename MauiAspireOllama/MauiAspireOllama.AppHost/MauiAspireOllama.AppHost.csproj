@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.0" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.1" />
     <PackageReference Include="AspireMobile.Hosting" Version="0.7.130-beta" />
   </ItemGroup>
 
