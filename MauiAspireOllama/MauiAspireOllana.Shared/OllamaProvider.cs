@@ -24,26 +24,6 @@ public class OllamaProvider(IOllamaApiClient api, ILogger<OllamaProvider> logger
 		return JsonSerializer.Deserialize<T>(response, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 	}
 
-	public async Task<string?> GetImageResponse(string model, string request)
-	{
-		try
-		{
-			var result = await api.Chat.GenerateChatCompletionAsync(new GenerateChatCompletionRequest()
-			{
-				Model = model,
-				Messages = [new Message(MessageRole.User, request)]
-			});
-
-			return result.Message.Images?.FirstOrDefault();
-		}
-		catch (Exception e)
-		{
-			logger.LogError(e, "Failed generating image for {Request}", request);
-		}
-
-		return null;
-	}
-
 	public async Task PullModelAsync(string model)
 	{
 		var runningModels = await api.Models.ListModelsAsync();

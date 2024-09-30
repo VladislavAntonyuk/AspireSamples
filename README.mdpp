@@ -19,4 +19,6 @@ The development guide can be found at [SETUP.md](./SETUP.md).
 
 1. [DashboardConfiguration](DashboardConfiguration) - .NET Aspire Dashboard Configuration including Telemetry and Authentication.
 
+1. [MauiAspireOllama](MauiAspireOllama) - .NET Aspire + .NET MAUI leveraging free AI with Ollama.
+
 !INCLUDE "md/footer.mdpp"

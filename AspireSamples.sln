@@ -27,19 +27,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardConfiguration.Web"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MauiAspireOllama", "MauiAspireOllama", "{779D8643-5F9B-4B4E-BA7F-2C90A7C6FE2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.AppHost", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.AppHost\MauiAspireOllama.AppHost.csproj", "{1EEC7897-A25D-4973-8E49-15581A7081D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.AppHost", "MauiAspireOllama\MauiAspireOllama.AppHost\MauiAspireOllama.AppHost.csproj", "{1EEC7897-A25D-4973-8E49-15581A7081D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.ServiceDefaults", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.ServiceDefaults\MauiAspireOllama.ServiceDefaults.csproj", "{DE51F125-1ECB-4FD4-AADC-2624A5288394}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.ServiceDefaults", "MauiAspireOllama\MauiAspireOllama.ServiceDefaults\MauiAspireOllama.ServiceDefaults.csproj", "{DE51F125-1ECB-4FD4-AADC-2624A5288394}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.ApiService", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.ApiService\MauiAspireOllama.ApiService.csproj", "{D3B3AEBF-C0A1-42F9-8210-24FC7FD74093}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.ApiService", "MauiAspireOllama\MauiAspireOllama.ApiService\MauiAspireOllama.ApiService.csproj", "{D3B3AEBF-C0A1-42F9-8210-24FC7FD74093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.Web", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.Web\MauiAspireOllama.Web.csproj", "{8CB81B1B-5F05-4FF7-A341-339D5A9DC533}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.Web", "MauiAspireOllama\MauiAspireOllama.Web\MauiAspireOllama.Web.csproj", "{8CB81B1B-5F05-4FF7-A341-339D5A9DC533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.ClientStub", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.ClientStub\MauiAspireOllama.ClientStub.csproj", "{3D0B6CD5-EB3F-4E0A-BFD6-D834C1EB3A86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama.ClientStub", "MauiAspireOllama\MauiAspireOllama.ClientStub\MauiAspireOllama.ClientStub.csproj", "{3D0B6CD5-EB3F-4E0A-BFD6-D834C1EB3A86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.csproj", "{5B70DB70-B943-4F29-8470-8AC90DCEB4FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllama.csproj", "{5B70DB70-B943-4F29-8470-8AC90DCEB4FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllana.Shared", "MauiAspireOllama\MauiAspireOllama\MauiAspireOllana.Shared\MauiAspireOllana.Shared.csproj", "{4B3C9C69-3B3B-4BEC-8E89-3C6FB29894FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllana.Shared", "MauiAspireOllama\MauiAspireOllana.Shared\MauiAspireOllana.Shared.csproj", "{4B3C9C69-3B3B-4BEC-8E89-3C6FB29894FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
