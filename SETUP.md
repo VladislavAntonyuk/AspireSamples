@@ -1,10 +1,6 @@
 ## Build solution
 
-1. Install .NET 8
-1. Install .NET Aspire Workloads
-    ```pwsh
-    dotnet workload install aspire
-    ```
+1. Install .NET 9
 
 1. Build
     ```pwsh

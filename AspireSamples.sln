@@ -41,6 +41,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllama", "MauiAsp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAspireOllana.Shared", "MauiAspireOllama\MauiAspireOllana.Shared\MauiAspireOllana.Shared.csproj", "{4B3C9C69-3B3B-4BEC-8E89-3C6FB29894FD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF9A908A-3003-44C1-B4FF-98B61F566010}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		LICENSE = LICENSE
+		NuGet.config = NuGet.config
+		README.mdpp = README.mdpp
+		SETUP.md = SETUP.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

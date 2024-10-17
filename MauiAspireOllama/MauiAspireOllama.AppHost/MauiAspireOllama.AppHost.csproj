@@ -1,23 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <IsAspireHost>true</IsAspireHost>
-    <UserSecretsId>039794c1-ed17-4b59-88d2-254f2e93ff4e</UserSecretsId>
-  </PropertyGroup>
+	<Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0-rc.1.24511.1" />
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsAspireHost>true</IsAspireHost>
+		<UserSecretsId>039794c1-ed17-4b59-88d2-254f2e93ff4e</UserSecretsId>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\MauiAspireOllama.ApiService\MauiAspireOllama.ApiService.csproj" />
-    <ProjectReference Include="..\MauiAspireOllama.Web\MauiAspireOllama.Web.csproj" />
-    <ProjectReference Include="..\MauiAspireOllama.ClientStub\MauiAspireOllama.ClientStub.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\MauiAspireOllama.ApiService\MauiAspireOllama.ApiService.csproj" />
+		<ProjectReference Include="..\MauiAspireOllama.Web\MauiAspireOllama.Web.csproj" />
+		<ProjectReference Include="..\MauiAspireOllama.ClientStub\MauiAspireOllama.ClientStub.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.1" />
-    <PackageReference Include="AspireMobile.Hosting" Version="0.7.130-beta" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0-rc.1.24511.1" />
+		<PackageReference Include="AspireMobile.Hosting" Version="0.7.130-beta" />
+	</ItemGroup>
 
 </Project>
