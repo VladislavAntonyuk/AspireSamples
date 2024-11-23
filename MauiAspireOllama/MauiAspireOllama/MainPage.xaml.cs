@@ -2,42 +2,105 @@
 
 namespace MauiAspireOllama;
 
+using System.Text;
+using System.Text.Json;
+using LLama.Common;
+using LLama.Sampling;
+using LLama;
 using MauiAspireOllana.Shared;
-using Ollama;
+using static LLama.LLamaTransforms;
+
+public class HistoryTransform : DefaultHistoryTransform
+{
+	public override string HistoryToText(ChatHistory history)
+	{
+		return base.HistoryToText(history) + "\n Assistant:";
+	}
+
+}
 
 public partial class MainPage : ContentPage
 {
-    readonly ILogger<MainPage> logger;
-    private readonly OllamaProvider ollamaProvider;
-    readonly CancellationTokenSource closingCts = new();
+	readonly ILogger<MainPage> logger;
+	private readonly OllamaProvider ollamaProvider;
+	readonly CancellationTokenSource closingCts = new();
 
-    public MainPage(ILogger<MainPage> logger, OllamaProvider ollamaProvider)
-    {
-        InitializeComponent();
+	public MainPage(ILogger<MainPage> logger, OllamaProvider ollamaProvider)
+	{
+		InitializeComponent();
 
-        this.logger = logger;
-        this.ollamaProvider = ollamaProvider;
+		this.logger = logger;
+		this.ollamaProvider = ollamaProvider;
 
-        pbLoading.IsVisible = false;
-    }
+		LoadingIndicator.IsVisible = false;
+	}
 
-    protected override void OnDisappearing()
-    {
-        base.OnDisappearing();
+	protected override void OnDisappearing()
+	{
+		base.OnDisappearing();
 
-        closingCts.Cancel();
-    }
+		closingCts.Cancel();
+	}
 
-    async void OnButtonClick(object sender, EventArgs e)
-    {
-        btnLoad.IsEnabled = false;
-        pbLoading.IsVisible = true;
+	async void AmINeedAnUmbrellaClick(object sender, EventArgs e)
+	{
+		var weather = WeatherCollectionView.ItemsSource?.Cast<WeatherForecast>().FirstOrDefault();
+		if (weather == null)
+		{
+			await DisplayAlert("Weather not loaded", "Please load the weather first", "Ok");
+			return;
+		}
 
-        try
-        {
-            await ollamaProvider.PullModelAsync("llama3:latest");
+		AmINeedAnUmbrellaResult.Text = string.Empty;
+
+		var file = await FilePicker.PickAsync();
+		if (file == null)
+		{
+			return;
+		}
+
+
+		LoadingIndicator.IsVisible = true;
+		var @params = new ModelParams(file.FullPath)
+		{
+			ContextSize = 512
+		};
+
+		using var weights = LLamaWeights.LoadFromFile(@params);
+		var executor = new StatelessExecutor(weights, @params);
+		var prompt = $"""
+		              I have the next {weather}. 
+		              You are a weather forecast expert, that can Choose one of two options and answer the question Do I need an umbrella?.
+		              If you choose Option 1 than answer: Yes, you need an umbrella.
+		              If you choose Option 2 than answer: No, you don't need an umbrella.
+		              """;
+		var result = executor.InferAsync(
+			prompt,
+			new InferenceParams()
+			{
+                MaxTokens = 50,
+				AntiPrompts = ["umbrella"]
+			});
+
+		await foreach (var r in result)
+		{
+			AmINeedAnUmbrellaResult.Text += r;
+		}
+
+		LoadingIndicator.IsVisible = false;
+		await DisplayAlert("Result", AmINeedAnUmbrellaResult.Text, "Ok");
+	}
+
+	async void LoadWebWeatherClick(object sender, EventArgs e)
+	{
+		LoadWebWeather.IsEnabled = false;
+		LoadingIndicator.IsVisible = true;
+
+		try
+		{
+			await ollamaProvider.PullModelAsync("llama3.2:latest");
 			var weather = await ollamaProvider.GetResponse<Response>(
-				"llama3",
+				"llama3.2",
 				"""
 				  Generate random weather for the next 5 days.
 				  Return the JSON Array with the next properties: (DateOnly Date, int TemperatureC, string? Summary). Example:
@@ -51,24 +114,25 @@ public partial class MainPage : ContentPage
 				  				]
 				  }
 				  """);
-            dgWeather.ItemsSource = weather?.Forecast;
-            dgWeather.IsVisible = true;
-        }
-        catch (TaskCanceledException)
-        {
-            return;
-        }
-        catch (Exception ex)
-        {
-            logger.LogError(ex, "Error loading weather");
+			WeatherCollectionView.ItemsSource = weather?.Forecast;
+			WeatherCollectionView.IsVisible = true;
+		}
+		catch (TaskCanceledException ex)
+		{
+			await DisplayAlert(ex.Message, "Error", "Ok");
+			return;
+		}
+		catch (Exception ex)
+		{
+			logger.LogError(ex, "Error loading weather");
 
-            dgWeather.IsVisible = false;
-            dgWeather.ItemsSource = null;
+			WeatherCollectionView.IsVisible = false;
+			WeatherCollectionView.ItemsSource = null;
 
-            await DisplayAlert(ex.Message, "Error", "Ok");
-        }
+			await DisplayAlert(ex.Message, "Error", "Ok");
+		}
 
-        pbLoading.IsVisible = false;
-        btnLoad.IsEnabled = true;
-    }
+		LoadingIndicator.IsVisible = false;
+		LoadWebWeather.IsEnabled = true;
+	}
 }

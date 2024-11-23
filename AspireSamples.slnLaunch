@@ -3,12 +3,11 @@
     "Name": "MauiAspireOllamaAll",
     "Projects": [
       {
-        "Path": "MauiAspireOllama\\MauiAspireOllama\\MauiAspireOllama.AppHost\\MauiAspireOllama.AppHost.csproj",
-        "Action": "Start",
-        "DebugTarget": "https"
+        "Path": "MauiAspireOllama\\MauiAspireOllama.AppHost\\MauiAspireOllama.AppHost.csproj",
+        "Action": "Start"
       },
       {
-        "Path": "MauiAspireOllama\\MauiAspireOllama\\MauiAspireOllama\\MauiAspireOllama.csproj",
+        "Path": "MauiAspireOllama\\MauiAspireOllama\\MauiAspireOllama.csproj",
         "Action": "Start",
         "DebugTarget": "Windows Machine"
       }

@@ -2,6 +2,7 @@
 <ContentPage 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mauiAspireOllama="clr-namespace:MauiAspireOllama"
     x:Class="MauiAspireOllama.MainPage"
     Title="Weather Forecasts">
     <Grid>
@@ -13,25 +14,37 @@
         </Grid.RowDefinitions>
         <Border 
             Padding="5">
-            <HorizontalStackLayout>
-	            <Button 
-		            x:Name="btnLoad"
-		            Text="Load Weather" 
+            <Grid
+	            ColumnDefinitions="Auto, Auto, *, Auto">
+	            <Button
+		            x:Name="LoadWebWeather"
+		            Text="Load Web Weather" 
 		            HorizontalOptions="Start" 
 		            VerticalOptions="Center" 
-		            Clicked="OnButtonClick" />
-	            <ActivityIndicator 
-		            x:Name="pbLoading"
+		            Clicked="LoadWebWeatherClick" />
+				<Button 
+					Grid.Column="1"
+		            x:Name="AmINeedAnUmbrella"
+		            Text="Am I Need An Umbrella?" 
+		            HorizontalOptions="Start" 
+		            VerticalOptions="Center" 
+		            Clicked="AmINeedAnUmbrellaClick" />
+				<ActivityIndicator 
+					Grid.Column="2"
+		            x:Name="LoadingIndicator"
 		            IsRunning="True"
 		            Margin="5" />
-			</HorizontalStackLayout>
+				<Label
+					Grid.Column="3"
+					x:Name="AmINeedAnUmbrellaResult"/>
+			</Grid>
         </Border>
         <Border
             Grid.Row="1">
             <CollectionView
-                x:Name="dgWeather">
+                x:Name="WeatherCollectionView">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
+					<DataTemplate x:DataType="mauiAspireOllama:WeatherForecast">
                         <Grid
                             ColumnDefinitions="*,*,*,*">
                             <Label 

@@ -7,12 +7,16 @@ public static class OllamaProviderExtensions
 {
 	public static IServiceCollection AddOllamaProvider(this IServiceCollection services, string baseUrl)
 	{
-		services.AddHttpClient<IOllamaApiClient, OllamaApiClient>(client => client.BaseAddress = new Uri(baseUrl))
+		services.AddHttpClient<IOllamaApiClient, OllamaApiClient>(client =>
+		        {
+			        client.Timeout = TimeSpan.FromHours(24);
+					client.BaseAddress = new Uri(baseUrl);
+		        })
 				.AddStandardResilienceHandler(x =>
 				{
-					x.AttemptTimeout.Timeout = TimeSpan.FromMinutes(5);
-					x.CircuitBreaker.SamplingDuration = TimeSpan.FromMinutes(10);
-					x.TotalRequestTimeout.Timeout = TimeSpan.FromMinutes(10);
+					x.AttemptTimeout.Timeout = TimeSpan.FromMinutes(10);
+					x.CircuitBreaker.SamplingDuration = TimeSpan.FromMinutes(30);
+					x.TotalRequestTimeout.Timeout = TimeSpan.FromMinutes(30);
 				});
 		services.AddSingleton<OllamaProvider>();
 		return services;

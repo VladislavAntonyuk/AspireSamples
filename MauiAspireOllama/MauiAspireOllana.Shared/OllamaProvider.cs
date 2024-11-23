@@ -12,8 +12,8 @@ public class OllamaProvider(IOllamaApiClient api, ILogger<OllamaProvider> logger
 		{
 			Model = model,
 			Messages = [
-				new Message(MessageRole.System, "You are a meteostation with a great knowledge of weather."),
-					new Message(MessageRole.User, request)
+				new Message(MessageRole.System, "You are a meteostation with a great knowledge of weather.", null, null),
+				new Message(MessageRole.User, request, null, null)
 			],
 			Format = ResponseFormat.Json
 		});
@@ -21,7 +21,7 @@ public class OllamaProvider(IOllamaApiClient api, ILogger<OllamaProvider> logger
 		logger.LogInformation("Received a response from AI: {Response}, Duration: {Duration}",
 							  result.Message.Content, result.TotalDuration);
 		var response = result.Message.Content;
-		return JsonSerializer.Deserialize<T>(response, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+		return JsonSerializer.Deserialize<T>(response, JsonSerializerOptions.Web);
 	}
 
 	public async Task PullModelAsync(string model)

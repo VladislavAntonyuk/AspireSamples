@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MauiAspireOllama;
 
+using LLama.Native;
 using MauiAspireOllana.Shared;
 using Ollama;
 
@@ -11,7 +12,7 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
-        var mauiAppBuilder = MauiApp.CreateBuilder();
+		var mauiAppBuilder = MauiApp.CreateBuilder();
 
         mauiAppBuilder
             .UseMauiApp<App>()

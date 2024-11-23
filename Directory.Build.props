@@ -3,12 +3,12 @@
 
 	<PropertyGroup>
 		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
-		<NetVersion>net8.0</NetVersion>
+		<NetVersion>net9.0</NetVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
 		<Nullable>enable</Nullable>
-		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 		<NoWarn>$(NoWarn);NU1603;NU1903</NoWarn>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>

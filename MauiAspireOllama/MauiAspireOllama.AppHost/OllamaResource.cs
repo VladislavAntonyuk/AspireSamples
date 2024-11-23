@@ -40,5 +40,5 @@ internal static class OllamaContainerImageTags
 
 	internal const string Image = "ollama/ollama";
 
-	internal const string Tag = "0.3.8";
+	internal const string Tag = "0.4.1";
 }
