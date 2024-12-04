@@ -4,9 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MauiAspireOllama;
 
-using LLama.Native;
 using MauiAspireOllana.Shared;
-using Ollama;
 
 public static class MauiProgram
 {

@@ -2,22 +2,9 @@
 
 namespace MauiAspireOllama;
 
-using System.Text;
-using System.Text.Json;
 using LLama.Common;
-using LLama.Sampling;
 using LLama;
 using MauiAspireOllana.Shared;
-using static LLama.LLamaTransforms;
-
-public class HistoryTransform : DefaultHistoryTransform
-{
-	public override string HistoryToText(ChatHistory history)
-	{
-		return base.HistoryToText(history) + "\n Assistant:";
-	}
-
-}
 
 public partial class MainPage : ContentPage
 {
